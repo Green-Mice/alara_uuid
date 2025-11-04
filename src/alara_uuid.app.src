@@ -13,5 +13,5 @@
     {links, [
         {"GitHub", "https://github.com/Green-Mice/alara_uuid"},
         {"Documentation", "https://hexdocs.pm/alara_uuid/"}
-    ]},
- ]}.
+    ]}
+]}.
