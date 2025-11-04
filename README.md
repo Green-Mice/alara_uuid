@@ -2,6 +2,10 @@
 
 High-quality UUID generation for Erlang with distributed entropy powered by ALARA.
 
+[![Hex.pm](https://img.shields.io/hexpm/v/alara_uuid.svg)](https://hex.pm/packages/alara_uuid)
+[![Hex Docs](https://img.shields.io/badge/hex-docs-blue.svg)](https://hexdocs.pm/alara_uuid)
+[![License](https://img.shields.io/badge/license-Apache%202.0-blue.svg)](LICENSE)
+
 ## Description
 
 ALARA UUID is an RFC 9562 compliant UUID generator that leverages the ALARA distributed entropy network to produce cryptographically strong identifiers. It supports both UUID v7 (time-based with random components) for optimal database performance and UUID v5 (name-based SHA-1) for deterministic generation.
@@ -271,6 +275,6 @@ Apache License 2.0
 ## References
 
 - RFC 9562: Universally Unique IDentifiers (UUIDs)
-- ALARA: Distributed Entropy Network System
+- [ALARA: Distributed Entropy Network System](https://github.com/Green-Mice/alara)
 - UUID v7 Draft Specification
 
