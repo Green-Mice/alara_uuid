@@ -1,6 +1,6 @@
 {application, alara_uuid, [
     {description, "High-quality UUID generation for Erlang with distributed entropy powered by ALARA."},
-    {vsn, "0.1.1"},
+    {vsn, "0.1.2"},
     {registered, []},
     {applications, [
         kernel,

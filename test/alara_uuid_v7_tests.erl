@@ -13,13 +13,8 @@
 
 %% Setup: Ensure ALARA is available for tests
 alara_setup() ->
-    %% ALARA will auto-start in v7(), but we can pre-start for efficiency
-    case whereis(alara_node_sup) of
-        undefined ->
-            {ok, _} = alara_node_sup:start_link(3);
-        _ ->
-            ok
-    end.
+    {ok, _} = application:ensure_all_started(alara),
+    ok.
 
 alara_cleanup(_) ->
     %% Leave ALARA running for other tests

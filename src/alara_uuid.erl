@@ -199,19 +199,13 @@ generate_uuid_v5(Namespace, Name) when is_binary(Namespace), is_binary(Name) ->
 %% Internal helpers
 %% ============================================================================
 
-%% Start the ALARA supervisor if it is not already registered.
+%% Ensure the ALARA OTP application is running before generating UUIDs.
 %% v7/0 and v7/1 call this once before entering the generation loop.
 -spec ensure_alara_started() -> ok.
 ensure_alara_started() ->
-    case whereis(alara_node_sup) of
-        undefined ->
-            case alara_node_sup:start_link(3) of
-                {ok, _}                      -> ok;
-                {error, {already_started, _}} -> ok;
-                {error, Reason}              -> error({alara_start_failed, Reason})
-            end;
-        _ ->
-            ok
+    case application:ensure_all_started(alara) of
+        {ok, _}         -> ok;
+        {error, Reason} -> error({alara_start_failed, Reason})
     end.
 
 %% Format a 128-bit UUID binary as a string.
